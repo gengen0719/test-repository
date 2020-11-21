@@ -1,0 +1,13 @@
+#typed{
+    color:black;
+}
+
+#untyped{
+    color: grey;
+}
+
+.quote{
+    font-size: 80px;
+    text-align: center;
+    margin-top: 100px;
+}
