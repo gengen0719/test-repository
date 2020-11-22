@@ -1,0 +1,26 @@
+body{
+    background-color:darkgray
+}
+
+#game-field{
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    margin: 6px;
+}
+
+.board{
+    width: 100%;
+    margin-top: 60px;
+    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card{
+    margin:2px;
+    width : 80px;
+    height : 80px;
+}
