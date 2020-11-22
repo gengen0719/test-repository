@@ -9,15 +9,22 @@
 <body>
     <header>        
         <h1>Doubble Game</h1>
-        <span>一つだけ同じ画像があるよ</span><br>
-        <span>探してタップしよう！</span>
     </header>
     
     <div id="game-field">
+        <section class="game-message">
+            <span>上下に一つだけ同じ画像があるよ</span><br>
+            <span>探してタップしよう！</span><br>
+            <div class="right-align"><span id="question-no">1</span> <span>/10問目</span></div>
+        </section>
         <div id="board1" class="board"></div>
         <div id="board2" class="board"></div>
     </div>
-   
+
+    <div id="result-field">
+        <div id="result-body"></div>
+        <span id="replay">もう一度遊ぶ</span>
+    </div>
 
     <script src="../lib/jquery-3.5.1.js"></script>
     <script src="app.js"></script>
