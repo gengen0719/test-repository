@@ -100,6 +100,7 @@ function removeOneImage(imageArray,removeImage){
 function getImageObjects(){
     return  [
         {id:"gong", name : "ごんちゃん",filePath : "img/gongchang.jpg",isAnswer : false , context : "フジロック会場に多数生息する石。"},
+        {id:"ebi-fly", name : "えびふらいのしっぽ" , filePath : "img/ebi-fly.jpeg" , isAnswer : false , context : "私は割と残さず食べる派。"},
         {id : "snoopy" , name : "スヌーピー",filePath : "img/snoopy.jpg",isAnswer : false ,context : "世界的に有名な犬。"},
         {id:"alexander", name : "アレクサンダ",filePath : "img/alexander.jpg",isAnswer : false,context : "ゼンマイ仕掛けのねずみと友達になった心優しいねずみ。"},
         {id:"kodak", name : "コダック",filePath : "img/kodak.jpg",isAnswer : false,context : "常に頭痛に悩まされているアヒル。かわいそう。"},
@@ -116,8 +117,6 @@ function getImageObjects(){
         {id : "kawasaki" , name : "コックカワサキ",filePath : "img/cock-kawasaki.jpg",isAnswer : false,context : "サイコパス"},
         {id : "chocojiro", name : "サク山チョコ次郎",filePath : "img/chocojiro.jpg",isAnswer : false,context : "スーパーやコンビニで見つけたら保護してください"}];
 }
-
-
 
 function appendCard(targetBoard,imageObject){
     if(imageObject.isAnswer){
@@ -136,8 +135,4 @@ function appendResultCard(questionNo,resultObject){
         + '<span class="character-name">' + resultObject.answerImage.name + '</span><br>' 
         + '<span class="character-context">' + resultObject.answerImage.context + '</span>' 
         + '</div></div></div>');
-    
-    
-    
-    
 }
