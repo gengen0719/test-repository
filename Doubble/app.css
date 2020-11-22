@@ -1,7 +1,3 @@
-body{
-    background-color:darkgray
-}
-
 #game-field{
     width: 100%;
     height: 90%;
@@ -12,7 +8,7 @@ body{
 
 .board{
     width: 100%;
-    margin-top: 60px;
+    margin-top: 40px;
     border-width: 1px;
     display: flex;
     justify-content: center;
