@@ -41,12 +41,12 @@ https://boku-boardgame.net/dobble
 ```
 index.html  
 index.htmlはindexとうち、html:5
--- body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcして、srcにapp.js
--- head tag内でapp.cssを読み込むためにlinkとうち、link:cssして、srcにapp.css
+- body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcして、srcにapp.js
+- head tag内でapp.cssを読み込むためにlinkとうち、link:cssして、srcにapp.css
 app.js
--- app.jsには読み込み確認のために、console.log('hello');を記載
+- app.jsには読み込み確認のために、console.log('hello');を記載
 app.css
--- app.cssには読み込み確認のために、以下を記載
+- app.cssには読み込み確認のために、以下を記載
 ```
 body{
     background-color: pink;
