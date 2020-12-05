@@ -32,13 +32,29 @@ https://boku-boardgame.net/dobble
 
 ## 実装
 今回は問題を１問表示し正解の画像をタップすると正解と出るところまでを実装します。
-### フォルダを準備しhtml,css,jsファイルを配置する
+### 実装の準備(小林さん回の復習)
 ```
 -Dobble Game
 --index.html
 --app.js
 --app.css
 ```
+index.html  
+index.htmlはindexとうち、html:5
+-- body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcして、srcにapp.js
+-- head tag内でapp.cssを読み込むためにlinkとうち、link:cssして、srcにapp.css
+app.js
+-- app.jsには読み込み確認のために、console.log('hello');を記載
+app.css
+-- app.cssには読み込み確認のために、以下を記載
+```
+body{
+    background-color: pink;
+}
+```
+index.htmlを選択して、右クリックOpen With Live Server  
+ピンクの画面で開く　-> css読み込みOK F12 consoleでhello world　-> js読み込みOK  
+とでていればOK　でてない場合はおそらくファイル名とsrc/hrefの指定がマッチしていないはず  
 
 ### htmlファイルにcssファイル,jsファイルを読み込ませる
 
