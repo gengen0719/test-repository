@@ -13,6 +13,9 @@ https://boku-boardgame.net/dobble
 好きなキャラクターで実装すると子供が喜んでくれるかも
 
 ## 事前準備
-小林さんの回で使っていたVSCODEとLive Serverを利用します  
-まだインストールできていない方は以下で手順を確認しながらインストールしてください。
-
+小林さんの回で使っていたVSCODEとLive Serverを使用します  
+まだインストールできていない方はインストールしてください。  
+vscodeのインストール  
+https://code.visualstudio.com/download  
+vscodeプラグインのインストール  
+https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer  
