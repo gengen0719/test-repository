@@ -56,5 +56,19 @@ index.htmlを選択して、右クリックOpen With Live Server
 ピンクの画面で開く　-> css読み込みOK F12 consoleでhello world　-> js読み込みOK  
 とでていればOK　でてない場合はおそらくファイル名とsrc/hrefの指定がマッチしていないはず  
 
-### htmlファイルにcssファイル,jsファイルを読み込ませる
+### 用意した画像ファイルを配置する
+```
+-Dobble Game
+--index.html
+--app.js
+--app.css
+--img
+---chocojiro.jpg
+---uniguri.jpg
+---moran.jpg
+....
+```
+
+
+### どういう画面構成にするのかイメージする
 
