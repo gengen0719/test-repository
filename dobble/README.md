@@ -33,5 +33,12 @@ https://boku-boardgame.net/dobble
 ## 実装
 今回は問題を１問表示し正解の画像をタップすると正解と出るところまでを実装します。
 ### フォルダを準備しhtml,css,jsファイルを配置する
+```
+-Dobble Game
+--index.html
+--app.js
+--app.css
+```
+
 ### htmlファイルにcssファイル,jsファイルを読み込ませる
 
