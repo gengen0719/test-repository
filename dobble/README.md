@@ -147,7 +147,6 @@ card1.append(appendImage);
 jQueryでは$()にタグを渡してあげるとそのタグの要素を生成します。  
 さらに第2引数にオブジェクトを指定すると、そのオブジェクトのプロパティは、HTMLの属性として設定されます。  
 
-こうしておくと追加する画像の要素を配列で用意しておけば、追加が楽になります。  
 関数化してみましょう。  
 ```
 function appendImage($targetCard,imageResource){
@@ -157,6 +156,24 @@ function appendImage($targetCard,imageResource){
 let card1 = $('#card1');
 let imageResource = {'src':'../dobble/img/ahoudori.jpg'};
 appendImage(card1,imageResource);
+```
+こうしておくと追加する画像のsrc部分を配列で用意しておけば、追加が楽になります。  
+```
+function appendImage($targetCard,imageResource){
+    $targetCard.append($('<img>',imageResource));
+}
+
+let imageResourceArray = [
+    {'src':'../dobble/img/chocojiro.jpg'},
+    {'src':'../dobble/img/ahoudori.jpg'},
+    {'src':'../dobble/img/alexander.jpg'},
+    {'src':'../dobble/img/baniokun.jpg'}
+];
+
+let card1 = $('#card1');
+imageResourceArray.forEach(function(currentImageResource){
+    appendImage(card1,currentImageResource);
+});
 ```
 
 
