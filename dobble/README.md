@@ -61,7 +61,7 @@ F12 consoleでhelloと出ていればjs読み込みOK
 出ていない場合はおそらくファイル名とsrc/hrefの指定がマッチしていないはず  
 
 ### 用意した画像ファイルを配置する
-imgフォルダを作ってそこに画像を配置しましょう。  
+imgフォルダを作ってそこに画像を配置する。  
 ```
 -Dobble Game
 --index.html
@@ -77,6 +77,19 @@ imgフォルダを作ってそこに画像を配置しましょう。
 用意したファイルが無い方は以下のリンクから私が用意した画像ファイルをダウンロードして利用してください。  
 
 ### jQueryを読み込む
+今回はDOMの操作にjQueryを使うので、jQueryの準備をします。
+- libフォルダを作り、そこにjQueryのサイトからjsファイルを取得して配置します  
+https://code.jquery.com/jquery-3.5.1.js
+
+```
+-Dobble Game
+--index.html
+--app.js
+--app.css
+--img
+--lib
+---jquery-3.5.1.js
+```
 
 ### 静的な要素をHTMLに記載する
 
