@@ -20,7 +20,7 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 好きなキャラクターで実装すると私は楽しかったです。  
 子供の好きなキャラクターで実装すると喜んで遊んでくれるかも。  
 特に推しキャラがいない、探すのが面倒だという方には図形の画像を用意しています。  
-(これはこれで知育っぽい感じになって良いかもしれない)  
+(これはこれで脳トレとか知育っぽい感じになって良いかもしれない)  
 外部公開する場合は著作権上問題のない画像を利用してください。  
 Live Serverで立てたサーバーにWifi経由でiPhoneやiPadでアクセスすれば外部公開しなくても遊べる環境は作れます。  
 
@@ -179,11 +179,13 @@ imageResourceArray.forEach(function(currentImageResource){
 こんな感じです。  
 
 ### cssを編集して画面構成のイメージに近づける
-画像のサイズがバラバラだったので追加するimgにclassをつけてcssでサイズを指定します。
+画像のサイズがバラバラだったので追加するimgにclassをつけてcssでサイズを指定します。  
+ついでに画像の周りに少し余白も付けます。  
 ```
 .character-image{
     width : 80px;
     height : 80px;
+    margin: 4px;
 }
 ```
 ```
@@ -193,7 +195,16 @@ function appendImage($targetCard,imageResource){
     $targetCard.append($appendImage);
 }
 ```
-
+- カードの背景を白にする
+- flexでいい感じに並べてみる
+```
+.game-card{
+    background-color : white;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+```
 
 ### ランダムな画像をappendする処理に改造する
 
