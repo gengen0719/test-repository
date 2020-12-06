@@ -214,8 +214,28 @@ Live Serverはcssの試行錯誤もサクっと反映されて便利ですね。
 0から配列の長さ-1までの整数乱数を発生させられれば配列のランダムな要素にアクセスできます。  
 つまりランダムな画像をappendできます。  
 #### JavaScriptで乱数を発生させる方法
-JavaScriptには0から1の間の乱数を発生させるメソッド `Math.random()` があります。
-`Math.random()` で発生させた乱数に配列の長さを掛けて `Math.floor()` で切り捨てると0から配列の長さ-1の範囲の整数乱数を発生させることができます。
-
+JavaScriptには0から1の間の乱数を発生させるメソッド `Math.random()` があります。  
+`Math.random()` で発生させた乱数に配列の長さを掛けて `Math.floor()` で切り捨てると0から配列の長さ-1の範囲の整数乱数を発生させることができます。  
+```
+console.log(Math.floor(Math.random() * imageResourceArray.length));
+```
+コンソールに出力して確認してみましょう。  
+これを利用してimageResourceArrayからランダムなimageResourceを取り出すメソッド書いてみましょう。  
+```
+function getRandomImageObject(targetImageResourceArray){
+    let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
+    return targetImageResourceArray[randomIndex];
+}
+```
+それを使ってそれぞれのカードに8個ずつ画像をappend  
+```
+let card1 = $('#card1');
+let card2 = $('#card2');
+const numberOfImageInCard = 8;
+for(let i=0;i < numberOfImageInCard;i++){
+    appendImage(card1,getRandomImageObject(imageResourceArray));   
+    appendImage(card2,getRandomImageObject(imageResourceArray));   
+}
+```
 
 ### 正解の判定を実装する
