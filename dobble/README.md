@@ -237,5 +237,27 @@ for(let i=0;i < numberOfImageInCard;i++){
     appendImage(card2,getRandomImageObject(imageResourceArray));   
 }
 ```
+だいぶやりたことに近づいてきました。   
+
+### 重複しないランダムな画像をカードに7個ずつ追加し、最後に正解の画像をランダムな位置に挿入する
+重複しないようにするためには、追加した画像を配列から削除してしまいましょう。  
+```
+function removeImageObject(targetImageResourceArray,targetImageObject){
+    return targetImageResourceArray.filter(function(currentImageObject){
+        return currentImageObject.src !== targetImageObject.src;
+    });
+}
+```
+filterはcallback関数がtrueを返した要素のみを残した配列を返してくれます。
+この関数を利用して以下のように書くと削除できるので
+
+```
+for(let i=0;i < numberOfImageInCard;i++){
+    let randomImageObject = getRandomImageObject(imageResourceArray);
+    appendImage(card1,randomImageObject);   
+    imageResourceArray = removeImageObject(imageResourceArray,randomImageObject);
+}
+```
+
 
 ### 正解の判定を実装する
