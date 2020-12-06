@@ -179,8 +179,8 @@ imageResourceArray.forEach(function(currentImageResource){
 こんな感じです。  
 
 ### cssを編集して画面構成のイメージに近づける
-画像のサイズがバラバラだったので追加するimgにclassをつけてcssでサイズを指定します。  
-ついでに画像の周りに少し余白も付けます。  
+- 画像のサイズがバラバラだったので追加するimgにclassをつけてcssでサイズを指定
+- 画像の周りに少し余白を付ける
 ```
 .character-image{
     width : 80px;
