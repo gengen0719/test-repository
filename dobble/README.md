@@ -40,21 +40,22 @@ https://boku-boardgame.net/dobble
 --app.css
 ```
 index.html  
-index.htmlはindexとうち、html:5
+index.htmlはhtmlと打って、html:5のテンプレートを選択
 - body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcして、srcにapp.js
 - head tag内でapp.cssを読み込むためにlinkとうち、link:cssして、srcにapp.css
-app.js
+app.js  
 - app.jsには読み込み確認のために、console.log('hello');を記載
-app.css
+app.css  
 - app.cssには読み込み確認のために、以下を記載
 ```
 body{
-    background-color: pink;
+    background-color: grey;
 }
 ```
 index.htmlを選択して、右クリックOpen With Live Server  
-ピンクの画面で開く　-> css読み込みOK F12 consoleでhello world　-> js読み込みOK  
-とでていればOK　でてない場合はおそらくファイル名とsrc/hrefの指定がマッチしていないはず  
+灰色の画面で開く　-> css読み込みOK  
+F12 consoleでhelloと出ていればjs読み込みOK  
+出ていない場合はおそらくファイル名とsrc/hrefの指定がマッチしていないはず  
 
 ### 用意した画像ファイルを配置する
 imgフォルダを作ってそこに画像を配置しましょう。  
