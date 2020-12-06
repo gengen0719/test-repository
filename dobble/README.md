@@ -261,3 +261,5 @@ for(let i=0;i < numberOfImageInCard;i++){
 
 
 ### 正解の判定を実装する
+
+
