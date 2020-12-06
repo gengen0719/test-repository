@@ -40,7 +40,7 @@ https://boku-boardgame.net/dobble
 --app.css
 ```
 index.html  
-index.htmlはhtmlと打って、html:5のテンプレートを選択
+- htmlと打って、html:5のテンプレートを選択
 - body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcして、srcにapp.js
 - head tag内でapp.cssを読み込むためにlinkとうち、link:cssして、srcにapp.css  
   
