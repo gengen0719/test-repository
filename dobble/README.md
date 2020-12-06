@@ -25,13 +25,15 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 Live Serverで立てたサーバーにWifi経由でiPhoneやiPadでアクセスすれば外部公開しなくても遊べる環境は作れます。  
 
 ## Dobble Gameとは？
-細かいルールはいろいろありますが、「2枚のカードの中から同じイラストを素早く見つける」というのが基本ルールです  
-https://boku-boardgame.net/dobble
-  
-ドラえもんやワンピースのカードもあるようです。  
+細かいルールはいろいろあるようですが、  
+「8つのイラストが描かれたカード2枚を見比べて同じイラストを見つける」
+というのが基本ルールです。  
+どのカードを見比べても必ず1つだけ同じイラストが見つかります。  
+https://boku-boardgame.net/dobble  
 
 ## 実装
-今回は問題を１問表示し正解の画像をタップすると正解と出るところまでを実装します。
+1つだけ同じイラストが描かれたカードを2枚表示して同じイラストをタップすると正解と表示される画面を実装してみます。  
+
 ### html,css,jsファイルの準備(小林さん回の復習)
 ```
 -Dobble Game
@@ -77,7 +79,7 @@ imgフォルダを作ってそこに画像を配置する。
 用意したファイルが無い方は以下のリンクから私が用意した画像ファイルをダウンロードして利用してください。  
 
 ### 静的な要素をHTMLに記載する
-画面の完成図をイメージしてbodyタグ内に固定要素を配置していく。  
+画面の完成図をイメージしてbodyタグ内に固定要素を記載する。  
 ```
 <body>
     <header>        
@@ -85,18 +87,20 @@ imgフォルダを作ってそこに画像を配置する。
     </header>
     
     <div id="game-field">
-        <div class="game-message">
+        <div id="game-message">
             <span>上下に一つだけ同じ画像があるよ</span><br>
             <span>探してタップしよう！</span><br>
         </div>
-        <div id="board1" class="game-card"></div>
-        <div id="board2" class="game-card"></div>
+        <div id="card1" class="game-card"></div>
+        <div id="card2" class="game-card"></div>
     </div>
     
     <script src="app.js"></script>
 </body>
-
 ```
+後で要素を足したり表示・非表示を切り替えたりcssでスタイルを指定しそうな要素にはあらかじめidやclassをつけておきます。  
+idはその名の通り要素を一意に識別できるidなので重複がないようにつけます。  
+classはその要素がどういうものかを表す属性で、重複しても構いません。一つの要素に複数付与できます。  
 
 ### jQueryを読み込む
 今回はDOMの操作にjQueryを使うので、jQueryの準備をします。
