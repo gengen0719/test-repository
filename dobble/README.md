@@ -32,7 +32,7 @@ https://boku-boardgame.net/dobble
 
 ## 実装
 今回は問題を１問表示し正解の画像をタップすると正解と出るところまでを実装します。
-### の準備(小林さん回の復習)
+### html,css,jsファイルの準備(小林さん回の復習)
 ```
 -Dobble Game
 --index.html
