@@ -179,6 +179,21 @@ imageResourceArray.forEach(function(currentImageResource){
 こんな感じです。  
 
 ### cssを編集して画面構成のイメージに近づける
+画像のサイズがバラバラだったので追加するimgにclassをつけてcssでサイズを指定します。
+```
+.character-image{
+    width : 80px;
+    height : 80px;
+}
+```
+```
+function appendImage($targetCard,imageResource){
+    let $appendImage = $('<img>',imageResource);
+    $appendImage.addClass('character-image');
+    $targetCard.append($appendImage);
+}
+```
+
 
 ### ランダムな画像をappendする処理に改造する
 
