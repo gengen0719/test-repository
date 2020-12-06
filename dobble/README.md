@@ -196,7 +196,8 @@ function appendImage($targetCard,imageResource){
 }
 ```
 - カードの背景を白にする
-- flexでいい感じに並べてみる
+- flexで並べてみる
+- カードの上部に余白を付ける
 ```
 .game-card{
     background-color : white;
@@ -205,7 +206,13 @@ function appendImage($targetCard,imageResource){
     flex-wrap: wrap;
 }
 ```
+大きい画面にも対応させたい場合はmax-widthを指定したりよろしくやってください。  
+Live Serverはcssの試行錯誤もサクっと反映されて便利ですね。
 
 ### ランダムな画像をappendする処理に改造する
+最初に書きましたがこのゲームでは毎回画像の並び順や重複する画像をランダムにしてあげる必要があります。  
+配列にはindexがあるので0から配列の長さ-1までの整数乱数を発生させられればランダムな画像をappendできます。  
+#### JavaScriptで乱数を発生させる方法
+JavaScriptには0から1の間の乱数を発生させるメソッドがあります。
 
 ### 正解の判定を実装する
