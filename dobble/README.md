@@ -248,8 +248,8 @@ function removeImageObject(targetImageResourceArray,targetImageObject){
     });
 }
 ```
-filterはcallback関数がtrueを返した要素のみを残した配列を返してくれます。
-この関数を利用して以下のように書くと削除できるので
+filterはcallback関数がtrueを返した要素のみを残した配列を返してくれます。  
+この関数を使って以下のようにして使ったオブジェクトを配列から消しましょう。
 
 ```
 for(let i=0;i < numberOfImageInCard;i++){
