@@ -157,7 +157,7 @@ let card1 = $('#card1');
 let imageResource = {'src':'img/ahoudori.jpg'};
 appendImage(card1,imageResource);
 ```
-こうしておくと追加する画像のsrc部分を配列で用意しておけば、追加が楽になります。  
+こうしておくと追加する画像のsrc部分を配列で用意しておけば、for文で回して追加できます。  
 ```
 function appendImage($targetCard,imageResource){
     $targetCard.append($('<img>',imageResource));
