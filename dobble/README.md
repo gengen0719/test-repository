@@ -100,8 +100,8 @@ imgフォルダを作ってそこに画像を配置する。
 ```
 後で要素を足したり表示・非表示を切り替えたりcssでスタイルを指定しそうな要素にはあらかじめidやclassをつけておきます。  
 idとclassの使い分けが分からない方は解説しているページがたくさんあるので読んでみてください。  
-HTML idとclassを間違いなく使い分けるために理解しておくべきこと  
-https://shu-sait.com/id-class-tukaiwake/  
+> HTML idとclassを間違いなく使い分けるために理解しておくべきこと  
+> https://shu-sait.com/id-class-tukaiwake/  
 
 ### jQueryを読み込む
 今回はDOMの操作にjQueryを使うので、jQueryの準備をします。
