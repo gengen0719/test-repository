@@ -154,7 +154,7 @@ function appendImage($targetCard,imageResource){
 }
 
 let card1 = $('#card1');
-let imageResource = {'src':'../dobble/img/ahoudori.jpg'};
+let imageResource = {'src':'img/ahoudori.jpg'};
 appendImage(card1,imageResource);
 ```
 こうしておくと追加する画像のsrc部分を配列で用意しておけば、追加が楽になります。  
@@ -164,10 +164,11 @@ function appendImage($targetCard,imageResource){
 }
 
 let imageResourceArray = [
-    {'src':'../dobble/img/chocojiro.jpg'},
-    {'src':'../dobble/img/ahoudori.jpg'},
-    {'src':'../dobble/img/alexander.jpg'},
-    {'src':'../dobble/img/baniokun.jpg'}
+    {'src':'img/chocojiro.jpg'},
+    {'src':'img/ahoudori.jpg'},
+    {'src':'img/alexander.jpg'},
+    {'src':'img/baniokun.jpg'},
+    .....
 ];
 
 let card1 = $('#card1');
@@ -175,7 +176,7 @@ imageResourceArray.forEach(function(currentImageResource){
     appendImage(card1,currentImageResource);
 });
 ```
-
+こんな感じです。  
 
 ### cssを編集して画面構成のイメージに近づける
 
