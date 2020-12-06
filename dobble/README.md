@@ -79,7 +79,8 @@ imgフォルダを作ってそこに画像を配置する。
 ### jQueryを読み込む
 今回はDOMの操作にjQueryを使うので、jQueryの準備をします。
 - libフォルダを作り、そこにjQueryのサイトからjsファイルを取得して配置します  
-https://code.jquery.com/jquery-3.5.1.js
+https://code.jquery.com/jquery-3.5.1.js  
+↑を名前をつけてリンク先を保存で良いです  
 
 ```
 -Dobble Game
@@ -90,6 +91,7 @@ https://code.jquery.com/jquery-3.5.1.js
 --lib
 ---jquery-3.5.1.js
 ```
+
 
 ### 静的な要素をHTMLに記載する
 
