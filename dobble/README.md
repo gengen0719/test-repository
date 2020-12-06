@@ -77,6 +77,26 @@ imgフォルダを作ってそこに画像を配置する。
 用意したファイルが無い方は以下のリンクから私が用意した画像ファイルをダウンロードして利用してください。  
 
 ### 静的な要素をHTMLに記載する
+画面の完成図をイメージしてbodyタグ内に固定要素を配置していく。  
+```
+<body>
+    <header>        
+        <h1>Dobble Game</h1>
+    </header>
+    
+    <div id="game-field">
+        <div class="game-message">
+            <span>上下に一つだけ同じ画像があるよ</span><br>
+            <span>探してタップしよう！</span><br>
+        </div>
+        <div id="board1" class="game-card"></div>
+        <div id="board2" class="game-card"></div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+
+```
 
 ### jQueryを読み込む
 今回はDOMの操作にjQueryを使うので、jQueryの準備をします。
@@ -95,7 +115,7 @@ https://code.jquery.com/jquery-3.5.1.js
 ```
 - index.htmlのapp.jsの読み込みのひとつ前の行にscript:srcして、srcにlib/jquery-3.5.1.jsと記載します  
 
-### imgタグをappendする処理を書いてみる
+### imgタグを動的にappendする処理を書いてみる
 
 ### imgタグを配列から決まった数だけappendする処理を書いてみる
 
