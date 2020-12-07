@@ -227,8 +227,11 @@ JavaScriptには0から1の間の乱数を発生させるメソッド `Math.rand
 console.log(Math.floor(Math.random() * imageResourceArray.length));
 ```
 コンソールに出力して確認してみましょう。  
-これを利用してimageResourceArrayからランダムなimageResourceを取り出すメソッド書いてみましょう。  
+これを利用してランダムな画像を8個ずつ取り出すメソッドを書いてみましょう。  
+
 ```
+const numberOfImagesInCard = 8;  
+  
 function pickUpRandomImages(targetImageResourceArray){
     let returnArray = [];
     for(let i=0 ; i<numberOfImagesInCard; i++){
@@ -238,7 +241,7 @@ function pickUpRandomImages(targetImageResourceArray){
     return returnArray;
 }
 ```
-それを使ってそれぞれのカードに8個ずつ画像をappend  
+それを使ってそれぞれのカードに画像をappend  
 ```
 let $card1 = $('#card1');
 let $card2 = $('#card2');
