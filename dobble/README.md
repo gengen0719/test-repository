@@ -1,6 +1,6 @@
 # Dobble Gameを作ってみよう
 実装例  
-https://gengen0719.github.io/test-repository/dobble/index.html
+https://gengen0719.github.io/test-repository/dobble/dojo-prepare/index
 
 ## 今回学べること
 - jQueryでのDOMの扱い
