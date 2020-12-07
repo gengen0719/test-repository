@@ -322,5 +322,61 @@ $('#game-field .answer').click(function(){
 その要素にclickイベントをセットしてalertで正解と表示する実装になります。  
 
 ### 問題を繰り返し表示するようにする
+正解したら繰り返し問題を表示するようにしてみましょう。  
+繰り返したい部分をstartGameメソッドにします。   
+正解を表示した後にcard1,card2の中身を空にしてstarGameメソッドを呼ぶようにします。  
+メソッドにするとjsファイルを読み込んだ時に実行されなくなるので、startGameメソッドを実行する文も足します。  
+（imageResourcesはメソッド内に持つと邪魔なのでgetするメソッドにして切り出しています）  
 
+```
+function getImageResources(){
+    return [
+        {'src':'img/chocojiro.jpg'},
+        {'src':'img/ahoudori.jpg'},
+        {'src':'img/alexander.jpg'},
+        {'src':'img/baniokun.jpg'},
+        {'src':'img/cock-kawasaki.jpg'},
+        {'src':'img/ebi-fly.jpeg'},
+        {'src':'img/gongchang.jpg'},
+        {'src':'img/kenny.jpg'},
+        {'src':'img/kodak.jpg'},
+        {'src':'img/korirakuma.jpg'},
+        {'src':'img/molang.jpg'},
+        {'src':'img/ninja-slayer.jpg'},
+        {'src':'img/panpanya.jpg'},
+        {'src':'img/shown.jpg'},
+        {'src':'img/snoopy.jpg'},
+        {'src':'img/sushikun.jpg'},
+        {'src':'img/unigurikun.jpg'},
+    ];
+}
 
+function startGame(){
+    let imageResources = getImageResources();
+
+    let card1Images = pickUpAndRemoveRandomImages(imageResources);
+    let card2Images = pickUpAndRemoveRandomImages(imageResources);
+    
+    let answerIndex = Math.floor(Math.random() * imageResources.length);
+    let answerImage = imageResources[answerIndex];
+    answerImage['class'] = 'answer';
+    
+    let card1AnswerIndex = Math.floor(Math.random() * card1Images.length);
+    card1Images.splice(card1AnswerIndex,0,answerImage);
+    
+    let card2AnswerIndex = Math.floor(Math.random() * card2Images.length);
+    card2Images.splice(card2AnswerIndex,0,answerImage);
+    
+    appendImages($card1,card1Images);
+    appendImages($card2,card2Images);
+    
+    $('#game-field .answer').click(function(){
+        alert('正解！');
+        $card1.empty();
+        $card2.empty();
+        startGame();
+    });
+}
+
+startGame();
+```
