@@ -49,10 +49,10 @@ function DobbleGame(){
         let answerImageObject = imageResourceArray[answerIndex];
         answerImageObject['class'] = 'answer';
         
-        let card1AnswerIndex = Math.floor(Math.random() * card1Images.length);        
+        let card1AnswerIndex = Math.floor(Math.random() * (card1Images.length + 1));        
         card1Images.splice(card1AnswerIndex,0,answerImageObject);
 
-        let card2AnswerIndex = Math.floor(Math.random() * card2Images.length);        
+        let card2AnswerIndex = Math.floor(Math.random() * (card2Images.length + 1));        
         card2Images.splice(card2AnswerIndex,0,answerImageObject);
 
         appendImages($card1,card1Images);
