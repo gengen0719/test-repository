@@ -291,15 +291,16 @@ let card2Images = pickUpAndRemoveRandomImages(imageResources);
 let answerIndex = Math.floor(Math.random() * imageResources.length);
 let answerImage = imageResources[answerIndex];
 
-let card1AnswerIndex = Math.floor(Math.random() * card1Images.length);
+let card1AnswerIndex = Math.floor(Math.random() * (card1Images.length + 1));
 card1Images.splice(card1AnswerIndex,0,answerImage);
 
-let card2AnswerIndex = Math.floor(Math.random() * card2Images.length);
+let card2AnswerIndex = Math.floor(Math.random() * (card2Images.length + 1));
 card2Images.splice(card2AnswerIndex,0,answerImage);
 ```
 実はspliceは第3引数にオブジェクトを渡すことでそのオブジェクトを配列に挿入することができます。  
 また削除する数を0にすると削除せず挿入のみを行えます。  
 `splice(操作を開始する要素のindex,削除する要素の数,挿入するオブジェクト)`   
+配列の末尾に追加する場合もあるので乱数は0から配列の数+1までの範囲で生成する必要があります。  
 これでほぼ実装できました。  
 
 ### 正解の判定を実装する
@@ -373,10 +374,10 @@ function startGame(){
     let answerImage = imageResources[answerIndex];
     answerImage['class'] = 'answer';
     
-    let card1AnswerIndex = Math.floor(Math.random() * card1Images.length);
+    let card1AnswerIndex = Math.floor(Math.random() * (card1Images.length + 1));
     card1Images.splice(card1AnswerIndex,0,answerImage);
     
-    let card2AnswerIndex = Math.floor(Math.random() * card2Images.length);
+    let card2AnswerIndex = Math.floor(Math.random() * (card2Images.length + 1));
     card2Images.splice(card2AnswerIndex,0,answerImage);
     
     appendImages($card1,card1Images);
