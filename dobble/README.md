@@ -297,6 +297,10 @@ card1Images.splice(card1AnswerIndex,0,answerImage);
 let card2AnswerIndex = Math.floor(Math.random() * card2Images.length);
 card2Images.splice(card2AnswerIndex,0,answerImage);
 ```
+実はspliceは第3引数にオブジェクトを渡すことでそのオブジェクトを配列に挿入することができます。  
+また削除する数を0にすると削除せず挿入のみを行えます。  
+`splice(操作を開始する要素のindex,削除する要素の数,挿入するオブジェクト)`   
+これでほぼ実装できました。  
 
 ### 正解の判定を実装する
 
