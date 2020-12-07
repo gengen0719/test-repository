@@ -3,8 +3,8 @@ const questionNumber = 10;
 const currentQuestionNumber = $("#question-no");
 const replayLink = $("#replay");
 
-const board1 = $("#board1");
-const board2 = $("#board2");
+const card1 = $("#card1");
+const card2 = $("#card2");
 const gameField = $("#game-field");
 const resultField = $("#result-field");
 const resultBody = $("#result-body");
@@ -22,8 +22,8 @@ replayLink.click(function(){
 start1Question();
 
 function start1Question(){
-    board1.empty();
-    board2.empty();
+    card1.empty();
+    card2.empty();
     gameField.show();
     resultField.hide();
     currentQuestionNumber.html(resultArray.length + 1);
@@ -40,11 +40,11 @@ function start1Question(){
     pushImageAtRandomPosition(board2Images,answerImage);
 
     board1Images.forEach(element => {
-        appendCard(board1,element);
+        appendCard(card1,element);
     });
 
     board2Images.forEach(element => {
-        appendCard(board2,element);
+        appendCard(card2,element);
     });
 
     gameField.find('.answer').click(clear1Question);
@@ -120,9 +120,9 @@ function getImageObjects(){
 
 function appendCard(targetBoard,imageObject){
     if(imageObject.isAnswer){
-        targetBoard.append('<img class="card answer" src=' + imageObject.filePath +' alt='+ imageObject.name + '>');
+        targetBoard.append('<img class="character-image answer" src=' + imageObject.filePath +' alt='+ imageObject.name + '>');
     } else{
-        targetBoard.append('<img class="card" src=' + imageObject.filePath +' alt='+ imageObject.name + '>');
+        targetBoard.append('<img class="character-image" src=' + imageObject.filePath +' alt='+ imageObject.name + '>');
     }
 }
 
@@ -130,7 +130,7 @@ function appendResultCard(questionNo,resultObject){
     resultBody.append('<div class="result-card">'
         + '<div class="result-card-header">' + '<span>' + questionNo + '問目 ' +  resultObject.clearTime / 1000 + '秒</span>' + '</div>'
         + '<div class="reuslt-card-body">'
-        + '<img class="card" src =' + resultObject.answerImage.filePath + ' alt=' + resultObject.answerImage.name + '>'
+        + '<img class="character-image" src =' + resultObject.answerImage.filePath + ' alt=' + resultObject.answerImage.name + '>'
         + '<div class"result-card-name-and-context">'
         + '<span class="character-name">' + resultObject.answerImage.name + '</span><br>' 
         + '<span class="character-context">' + resultObject.answerImage.context + '</span>' 

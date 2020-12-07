@@ -4,9 +4,10 @@ body{
 
 #game-field{
     width: 100%;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
-    margin: 6px;
+    margin: auto;
 }
 
 #result-field{
@@ -18,13 +19,11 @@ body{
 
 .right-align{
     text-align: right;
-    margin-right: 2px;
 }
 
 .result-card{
-    width : 98%;
+    max-width: 98%;
     height : 100px;
-    padding-left:4px;
     padding-bottom : 12px;
     box-shadow: grey;
     margin-bottom : 8px;
@@ -35,20 +34,19 @@ body{
     display: flex;
 }
 
-.board{
-    width: 100%;
-    margin-top: 32px;
+.game-card{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    background-color: whitesmoke;
-    padding-top : 4px;
+    background-color: white;
+    margin-top: 16px;
+    max-width: 360px;
 }
 
-.card{
-    margin:2px;
+.character-image{
     width : 80px;
     height : 80px;
+    margin: 4px;
 }
 
 .character-name{
