@@ -190,30 +190,35 @@ appendImages($card1,imageResources);
 }
 ```
 ```
-function appendImage($targetCard,imageResource){
-    let $appendImage = $('<img>',imageResource);
-    $appendImage.addClass('character-image');
-    $targetCard.append($appendImage);
+function appendImages($targetCard,imageResourceArray){
+    imageResourceArray.forEach(element => {
+        $appendImage = $('<img>',element);
+        $appendImage.addClass('character-image');
+        $targetCard.append($appendImage);        
+    });
 }
 ```
 - カードの背景を白にする
 - flexで並べてみる
 - カードの上部に余白を付ける
+- カードの最大幅を指定する
 ```
 .game-card{
     background-color : white;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 16px;
+    max-width: 360px;
 }
 ```
-大きい画面にも対応させたい場合はmax-widthを指定したりよろしくやってください。  
+いい感じの表示になるようにカスタマイズしてください。  
 Live Serverはcssの試行錯誤もサクっと反映されて便利ですね。
 
 ### ランダムな画像をappendする処理に改造する
 最初に書きましたがこのゲームでは毎回画像の並び順や重複する画像をランダムにしてあげる必要があります。  
-0から配列の長さ-1までの整数乱数を発生させられれば配列のランダムな要素にアクセスできます。  
-つまりランダムな画像をappendできます。  
+配列にはindexがあるので0から配列の長さ-1までの整数乱数を発生させられれば配列のランダムな要素にアクセスできます。  
+それを応用すればランダムな画像をappendできます。  
 #### JavaScriptで乱数を発生させる方法
 JavaScriptには0から1の間の乱数を発生させるメソッド `Math.random()` があります。  
 `Math.random()` で発生させた乱数に配列の長さを掛けて `Math.floor()` で切り捨てると0から配列の長さ-1の範囲の整数乱数を発生させることができます。  
