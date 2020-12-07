@@ -2,7 +2,7 @@
 実装例  
 https://gengen0719.github.io/test-repository/dobble/dojo-prepare/index
 
-## 今回学べること
+## 学べること
 - jQueryでのDOMの扱い
 - JavaScriptでの配列の扱い
 - JavaScriptでの乱数の扱い、画像をランダムに表示する実装
