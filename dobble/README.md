@@ -267,6 +267,36 @@ function pickUpAndRemoveRandomImages(targetImageResourceArray){
 ```
 配列から要素を削除するにはsplieを使います。  
 `splice(削除を開始する要素のinex,削除する数)` なので `splice(randomIndex,1)` でrandomIndexの要素を削除できます。  
+  
+1つ正解の重複する画像を追加する必要があるのでpickUpAndRemoveRandomImagesで取り出す数を7つに減らします。  
+```
+    for(let i=0 ; i<numberOfImagesInCard -1 ; i++){
+```
+pickUpAndRemoveRandomImagesで取り出した値を一旦配列に入れて、そこに正解の画像を足すように改造します。  
+```
+let card1Images = pickUpAndRemoveRandomImages(imageResources);
+let card2Images = pickUpAndRemoveRandomImages(imageResources);
+
+let answerIndex = Math.floor(Math.random() * imageResources.length);
+let answerImage = imageResources[answerIndex];
+card1Images.push(answerImage);
+card2Images.push(answerImage);
+```
+おっと、これでは必ず最後に正解が入ってしまいますね。  
+card1,card2それぞれランダムな位置に挿入するように改造します。  
+```
+let card1Images = pickUpAndRemoveRandomImages(imageResources);
+let card2Images = pickUpAndRemoveRandomImages(imageResources);
+
+let answerIndex = Math.floor(Math.random() * imageResources.length);
+let answerImage = imageResources[answerIndex];
+
+let card1AnswerIndex = Math.floor(Math.random() * card1Images.length);
+card1Images.splice(card1AnswerIndex,0,answerImage);
+
+let card2AnswerIndex = Math.floor(Math.random() * card2Images.length);
+card2Images.splice(card2AnswerIndex,0,answerImage);
+```
 
 ### 正解の判定を実装する
 
