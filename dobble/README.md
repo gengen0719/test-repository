@@ -253,7 +253,20 @@ appendImages($card2,pickUpRandomImages(imageResources));
 
 ### 重複しないランダムな画像をカードに7個ずつ追加し、最後に正解の画像をランダムな位置に挿入する
 重複しないようにするためには、追加した画像を配列から削除してしまいましょう。  
-
+pickUprandomImagesをpickUpAndRemoveRandomImagesに改造しましょう。  
+```
+function pickUpAndRemoveRandomImages(targetImageResourceArray){
+    let returnArray = [];
+    for(let i=0 ; i<numberOfImagesInCard; i++){
+        let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
+        returnArray.push(targetImageResourceArray[randomIndex]);
+        targetImageResourceArray.splice(randomIndex,1);
+    }
+    return returnArray;
+}
+```
+配列から要素を削除するにはsplieを使います。  
+`splice(削除を開始する要素のinex,削除する数)`
 
 
 ### 正解の判定を実装する
