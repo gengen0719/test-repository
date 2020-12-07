@@ -266,7 +266,7 @@ function pickUpAndRemoveRandomImages(targetImageResourceArray){
 }
 ```
 配列から要素を削除するにはsplieを使います。  
-`splice(削除を開始する要素のinex,削除する数)` なので `splice(randomIndex,1)` でrandomIndexの要素を削除できます。  
+`splice(削除を開始するindex,削除する数)` なので `splice(randomIndex,1)` でrandomIndexの要素を削除できます。  
   
 1つ正解の重複する画像を追加する必要があるのでpickUpAndRemoveRandomImagesで取り出す数を7つに減らします。  
 ```
@@ -299,7 +299,7 @@ card2Images.splice(card2AnswerIndex,0,answerImage);
 ```
 実はspliceは第3引数にオブジェクトを渡すことでそのオブジェクトを配列に挿入することができます。  
 また削除する数を0にすると削除せず挿入のみを行えます。  
-`splice(操作を開始する要素のindex,削除する要素の数,挿入するオブジェクト)`   
+`splice(操作を開始するindex,削除する要素の数,挿入するオブジェクト)`   
 **配列の末尾に追加する場合もあるので乱数は0から配列の数+1までの範囲で生成する必要があります。**  
 これでほぼ実装できました。  
 
