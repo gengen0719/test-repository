@@ -414,7 +414,7 @@ function pickUpAndRemoveRandomImages(targetImageResourceArray){
 ```
 JavaScriptで書く「var,let,const」の違いと使い分け方法  
 https://techacademy.jp/magazine/14872   
-varで書いてたおじさんだったので勉強になった
+varで書いてたおじさんだったので勉強になりました。
 
 リストから複数の要素をランダムに重複なく効率よく取り出す  
 https://qiita.com/sdkei/items/43d2902908efcfca7f25   
