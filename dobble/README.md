@@ -266,8 +266,7 @@ function pickUpAndRemoveRandomImages(targetImageResourceArray){
 }
 ```
 配列から要素を削除するにはsplieを使います。  
-`splice(削除を開始する要素のinex,削除する数)`
-
+`splice(削除を開始する要素のinex,削除する数)` なので `splice(randomIndex,1)` でrandomIndexの要素を削除できます。  
 
 ### 正解の判定を実装する
 
