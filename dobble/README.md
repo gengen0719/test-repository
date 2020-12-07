@@ -4,7 +4,8 @@ https://gengen0719.github.io/test-repository/dobble/index.html
 
 ## 今回学べること
 - jQueryでのDOMの扱い
-- 乱数の扱い、画像をランダムに表示する実装
+- JavaScriptでの配列の扱い
+- JavaScriptでの乱数の扱い、画像をランダムに表示する実装
 
 ## 事前準備
 ### 開発ツール
