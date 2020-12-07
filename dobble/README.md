@@ -162,8 +162,10 @@ appendImage($card1,imageResource);
 ```
 追加する画像のsrc部分を配列で用意して、for文で回して追加するように改造しましょう。
 ```
-function appendImage($targetCard,imageResource){
-    $targetCard.append($('<img>',imageResource));
+function appendImages($targetCard,imageResourceArray){
+    imageResourceArray.forEach(element => {
+        $targetCard.append($('<img>',element));        
+    });
 }
 
 let imageResourceArray = [
@@ -173,13 +175,9 @@ let imageResourceArray = [
     {'src':'img/baniokun.jpg'},
     .....
 ];
-
-let card1 = $('#card1');
-imageResourceArray.forEach(function(currentImageResource){
-    appendImage(card1,currentImageResource);
-});
+let $card1 = $('#card1');
+appendImages($card1,imageResources);
 ```
-こんな感じです。  
 
 ### cssを編集して画面構成のイメージに近づける
 - 画像のサイズがバラバラだったので追加するimgにclassをつけてcssでサイズを指定
