@@ -21,8 +21,6 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 好きなキャラクターで実装すると私は楽しかったです。  
 子供の好きなキャラクターで実装すると喜んで遊んでくれるかも。  
 特に推しキャラがいない、探すのが面倒だという方には図形の画像を用意しています。  
-以下のリンク先のdownloadというボタンを押してzipファイルをダウンロードしてください。  
-https://github.com/gengen0719/test-repository/blob/master/dobble/dojo-prepare/DobbleImages.zip  
 (これはこれで脳トレとか知育っぽい感じになって良いかもしれない)  
 外部公開する場合は著作権上問題のない画像を利用してください。  
 Live Serverで立てたサーバーにWifi経由でiPhoneやiPadでアクセスすれば外部公開しなくても遊べる環境は作れます。  
@@ -63,10 +61,10 @@ body{
 index.htmlを選択して、右クリックOpen With Live Server  
 灰色の画面で開く　-> css読み込みOK  
 F12 consoleでhelloと出ていればjs読み込みOK  
-出ていない場合はおそらくファイル名とsrc/hrefの指定がマッチしていないはず  
+出ていない場合はおそらくファイル名とsrc/hrefの指定がマッチしていないはずです  
 
 ### 用意した画像ファイルを配置する
-imgフォルダを作ってそこに画像を配置する。  
+imgフォルダを作ってそこに画像を配置します。  
 ```
 -Dobble Game
 --index.html
@@ -79,10 +77,12 @@ imgフォルダを作ってそこに画像を配置する。
 ---etc...
 ```
 自分で用意した画像ファイルがある方はそれらのファイルを、  
-用意したファイルが無い方は以下のリンクから私が用意した画像ファイルをダウンロードして利用してください。  
+ファイルを用意していない方は私の用意した図形のファイルを使って実装してみてください。  
+以下のリンク先のdownloadというボタンを押してzipファイルをダウンロードし解凍して配置してください。  
+https://github.com/gengen0719/test-repository/blob/master/dobble/dojo-prepare/DobbleImages.zip  
 
 ### 静的な要素をHTMLに記載する
-画面の完成図をイメージしてbodyタグ内に固定要素を記載する。  
+画面の完成図をイメージしてbodyタグ内に固定要素を記載します。  
 ```
 <body>
     <header>        
@@ -142,9 +142,9 @@ $('#card1').append('<img src="img/chocojiro.jpg" >')
 ### imgタグを配列から決まった数だけappendする処理を書いてみる
 ただ前述のようにタグを一続きの文字列で表現すると、動的に要素を入れる際に少しやりづらいので書き方を変えます。  
 ```
-let card1 = $('#card1');
+let $card1 = $('#card1');
 let appendImage = $('<img>',{'src':'img/chocojiro.jpg'});
-card1.append(appendImage);
+$card1.append(appendImage);
 ```
 動作は同じです。  
 jQueryでは$()にタグを渡してあげるとそのタグの要素を生成します。  
@@ -156,9 +156,9 @@ function appendImage($targetCard,imageResource){
     $targetCard.append($('<img>',imageResource));
 }
 
-let card1 = $('#card1');
-let imageResource = {'src':'img/ahoudori.jpg'};
-appendImage(card1,imageResource);
+let $card1 = $('#card1');
+let imageResource = {'src':'img/chocojiro.jpg'};
+appendImage($card1,imageResource);
 ```
 こうしておくと追加する画像のsrc部分を配列で用意しておけば、for文で回して追加できます。  
 ```
