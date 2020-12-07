@@ -411,7 +411,12 @@ function pickUpAndRemoveRandomImages(targetImageResourceArray){
 正解までのベストタイムをローカルストレージに記録して、更新したら知らせてくれる  
 - 画面共有して推しキャラについて語る
 - 今回の実装内容に関連する読み物
-> JavaScriptで書く「var,let,const」の違いと使い分け方法 https://techacademy.jp/magazine/14872   
-   
-> リストから複数の要素をランダムに重複なく効率よく取り出す https://qiita.com/sdkei/items/43d2902908efcfca7f25   
+```
+JavaScriptで書く「var,let,const」の違いと使い分け方法  
+https://techacademy.jp/magazine/14872   
+varで書いてたおじさんだったので勉強になった
 
+リストから複数の要素をランダムに重複なく効率よく取り出す  
+https://qiita.com/sdkei/items/43d2902908efcfca7f25   
+配列が大きくなるとこういうロジックにしてやる必要があるんだろうけど、業務ロジックからは意識せず使えるようにしたいですね。
+```
