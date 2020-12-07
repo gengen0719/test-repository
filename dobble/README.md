@@ -329,6 +329,18 @@ $('#game-field .answer').click(function(){
 （imageResourcesはメソッド内に持つと邪魔なのでgetするメソッドにして切り出しています）  
 
 ```
+function appendImages($targetCard,imageResourceArray){
+    imageResourceArray.forEach(element => {
+        $appendImage = $('<img>',element);
+        $appendImage.addClass('character-image');
+        $targetCard.append($appendImage);        
+    });
+}
+
+const $card1 = $('#card1');
+const $card2 = $('#card2');
+const numberOfImagesInCard = 8;
+
 function getImageResources(){
     return [
         {'src':'img/chocojiro.jpg'},
@@ -379,4 +391,25 @@ function startGame(){
 }
 
 startGame();
+
+function pickUpAndRemoveRandomImages(targetImageResourceArray){
+    let returnArray = [];
+    for(let i=0 ; i<numberOfImagesInCard -1 ; i++){
+        let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
+        returnArray.push(targetImageResourceArray[randomIndex]);
+        targetImageResourceArray.splice(randomIndex,1);
+    }
+    return returnArray;
+}
 ```
+これで完成です◎  
+
+### 早く終わった人へ  
+- こんな機能を追加してみると良いかも？  
+-- 正解のエフェクトを追加する（ピンポンって音を鳴らすとか、〇が付くとか）
+-- 正解した時に正解までにかかった時間を表示する
+-- 正解までのベストタイムをローカルストレージに記録して、更新したら知らせてくれる
+-画面共有して推しキャラについて語ってくれてもいいです。  
+-今回の実装内容に関連する読み物
+-- hoge
+-- fuga
