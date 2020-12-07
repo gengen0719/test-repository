@@ -12,11 +12,11 @@ https://gengen0719.github.io/test-repository/dobble/index.html
 まだインストールできていない方はインストールしてください。  
 vscodeのインストール  
 https://code.visualstudio.com/download  
-vscodeプラグインのインストール  
+Live Server(vscodeプラグイン)のインストール  
 https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer  
   
 ### 画像の準備
-できるだけ正方形に近い形の好きなキャラクターの画像を16枚以上用意しておいてください。  
+できるだけ正方形に近い形の好きなキャラクターの画像を15枚以上用意しておいてください。  
 好きなキャラクターで実装すると私は楽しかったです。  
 子供の好きなキャラクターで実装すると喜んで遊んでくれるかも。  
 特に推しキャラがいない、探すのが面倒だという方には図形の画像を用意しています。  
