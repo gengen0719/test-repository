@@ -303,5 +303,24 @@ card2Images.splice(card2AnswerIndex,0,answerImage);
 これでほぼ実装できました。  
 
 ### 正解の判定を実装する
+正解の判定は正解の画像をタップした時だけイベントを発生させることで実現できます。  
+まず正解の要素に正解であることが分かるようにclassを追加しましょう。  
+```
+let answerIndex = Math.floor(Math.random() * imageResources.length);
+let answerImage = imageResources[answerIndex];
+answerImage['class'] = 'answer';
+```
+こう書くことでanswerImageのclassフィールドにanswerがセットされ、それをもとに生成したDOMのclassにanswerが付きます。  
+このclassにanswerがついている要素にイベントを書いてみましょう。  
+
+```
+$('#game-field .answer').click(function(){
+    alert('正解！');
+});
+```
+`#game-field .answer` これでid=game-fieldの子要素の中でclassにanswerがついている要素という意味になります。  
+その要素にclickイベントをセットしてalertで正解と表示する実装になります。  
+
+### 問題を繰り返し表示するようにする
 
 
