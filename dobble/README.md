@@ -44,8 +44,8 @@ Live Serverで立てたサーバーにWifi経由でiPhoneやiPadでアクセス�
 ```
 index.html  
 - htmlと打って、html:5のテンプレートを選択
-- body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcして、srcにapp.js
-- head tag内でapp.cssを読み込むためにlinkとうち、link:cssして、srcにapp.css  
+- body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcを選んで、srcにapp.jsを指定
+- head tag内でapp.cssを読み込むためにlinkとうち、link:cssを選んで、srcにapp.cssを指定  
   
 app.js   
 - app.jsには読み込み確認のために、console.log('hello');を記載  
@@ -106,7 +106,7 @@ idとclassの使い分けが分からない方は解説しているページが�
 > HTML idとclassを間違いなく使い分けるために理解しておくべきこと  
 > https://shu-sait.com/id-class-tukaiwake/  
 
-### jQueryを読み込む
+### jQueryを配置して読み込む
 今回はDOMの操作にjQueryを使うので、jQueryの準備をします。
 - libフォルダを作り、そこにjQueryのサイトからjsファイルを取得して配置します  
 https://code.jquery.com/jquery-3.5.1.js  
