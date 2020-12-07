@@ -1,11 +1,18 @@
 # Dobble Gameを作ってみよう
 実装例  
-https://gengen0719.github.io/test-repository/dobble/index.html
+https://gengen0719.github.io/test-repository/dobble/dojo-prepare/index
 
-## 今回学べること
+## 学べること
 - jQueryでのDOMの扱い
 - JavaScriptでの配列の扱い
 - JavaScriptでの乱数の扱い、画像をランダムに表示する実装
+
+## Dobble Gameとは？
+細かいルールはいろいろあるようですが、  
+「8つのイラストが描かれたカード2枚を見比べて同じイラストを見つける」
+というのが基本ルールです。    
+https://boku-boardgame.net/dobble  
+どのカードを見比べても1つだけ同じイラストが見つかるように作られているようです。
 
 ## 事前準備
 ### 開発ツール
@@ -23,17 +30,10 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 特に推しキャラがいない、探すのが面倒だという方には図形の画像を用意しています。  
 (これはこれで脳トレとか知育っぽい感じになって良いかもしれない)  
 外部公開する場合は著作権上問題のない画像を利用してください。  
-Live Serverで立てたサーバーにWifi経由でiPhoneやiPadでアクセスすれば外部公開しなくても遊べる環境は作れます。  
-
-## Dobble Gameとは？
-細かいルールはいろいろあるようですが、  
-「8つのイラストが描かれたカード2枚を見比べて同じイラストを見つける」
-というのが基本ルールです。  
-どのカードを見比べても必ず1つだけ同じイラストが見つかります。  
-https://boku-boardgame.net/dobble  
+Live Serverで立てたサーバーにWifi経由でiPhoneやiPadでアクセスすれば外部公開しなくても遊べる環境は作れます。   
 
 ## 実装
-1つだけ同じイラストが描かれたカードを2枚表示して同じイラストをタップすると正解と表示される画面を実装してみます。  
+今回は1つだけ同じイラストが描かれたカードを2枚表示して同じイラストをタップすると正解と表示される画面を実装してみます。  
 
 ### html,css,jsファイルの準備(小林さん回の復習)
 ```
@@ -44,8 +44,8 @@ https://boku-boardgame.net/dobble
 ```
 index.html  
 - htmlと打って、html:5のテンプレートを選択
-- body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcして、srcにapp.js
-- head tag内でapp.cssを読み込むためにlinkとうち、link:cssして、srcにapp.css  
+- body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcを選んで、srcにapp.jsを指定
+- head tag内でapp.cssを読み込むためにlinkとうち、link:cssを選んで、srcにapp.cssを指定  
   
 app.js   
 - app.jsには読み込み確認のために、console.log('hello');を記載  
@@ -61,10 +61,10 @@ body{
 index.htmlを選択して、右クリックOpen With Live Server  
 灰色の画面で開く　-> css読み込みOK  
 F12 consoleでhelloと出ていればjs読み込みOK  
-出ていない場合はおそらくファイル名とsrc/hrefの指定がマッチしていないはず  
+出ていない場合はおそらくファイル名とsrc/hrefの指定がマッチしていないはずです  
 
 ### 用意した画像ファイルを配置する
-imgフォルダを作ってそこに画像を配置する。  
+imgフォルダを作ってそこに画像を配置します。  
 ```
 -Dobble Game
 --index.html
@@ -77,10 +77,12 @@ imgフォルダを作ってそこに画像を配置する。
 ---etc...
 ```
 自分で用意した画像ファイルがある方はそれらのファイルを、  
-用意したファイルが無い方は以下のリンクから私が用意した画像ファイルをダウンロードして利用してください。  
+ファイルを用意していない方は私の用意した図形のファイルを使って実装してみてください。  
+以下のリンク先のdownloadというボタンを押してzipファイルをダウンロードし解凍して配置してください。  
+https://github.com/gengen0719/test-repository/blob/master/dobble/dojo-prepare/DobbleImages.zip  
 
 ### 静的な要素をHTMLに記載する
-画面の完成図をイメージしてbodyタグ内に固定要素を記載する。  
+画面の完成図をイメージしてbodyタグ内に固定要素を記載します。  
 ```
 <body>
     <header>        
@@ -104,7 +106,7 @@ idとclassの使い分けが分からない方は解説しているページが�
 > HTML idとclassを間違いなく使い分けるために理解しておくべきこと  
 > https://shu-sait.com/id-class-tukaiwake/  
 
-### jQueryを読み込む
+### jQueryを配置して読み込む
 今回はDOMの操作にjQueryを使うので、jQueryの準備をします。
 - libフォルダを作り、そこにjQueryのサイトからjsファイルを取得して配置します  
 https://code.jquery.com/jquery-3.5.1.js  
@@ -140,9 +142,9 @@ $('#card1').append('<img src="img/chocojiro.jpg" >')
 ### imgタグを配列から決まった数だけappendする処理を書いてみる
 ただ前述のようにタグを一続きの文字列で表現すると、動的に要素を入れる際に少しやりづらいので書き方を変えます。  
 ```
-let card1 = $('#card1');
+let $card1 = $('#card1');
 let appendImage = $('<img>',{'src':'img/chocojiro.jpg'});
-card1.append(appendImage);
+$card1.append(appendImage);
 ```
 動作は同じです。  
 jQueryでは$()にタグを渡してあげるとそのタグの要素を生成します。  
@@ -154,14 +156,16 @@ function appendImage($targetCard,imageResource){
     $targetCard.append($('<img>',imageResource));
 }
 
-let card1 = $('#card1');
-let imageResource = {'src':'img/ahoudori.jpg'};
-appendImage(card1,imageResource);
+let $card1 = $('#card1');
+let imageResource = {'src':'img/chocojiro.jpg'};
+appendImage($card1,imageResource);
 ```
-こうしておくと追加する画像のsrc部分を配列で用意しておけば、for文で回して追加できます。  
+追加する画像のsrc部分を配列で用意して、for文で回して追加するように改造しましょう。
 ```
-function appendImage($targetCard,imageResource){
-    $targetCard.append($('<img>',imageResource));
+function appendImages($targetCard,imageResourceArray){
+    imageResourceArray.forEach(element => {
+        $targetCard.append($('<img>',element));        
+    });
 }
 
 let imageResourceArray = [
@@ -171,13 +175,11 @@ let imageResourceArray = [
     {'src':'img/baniokun.jpg'},
     .....
 ];
-
-let card1 = $('#card1');
-imageResourceArray.forEach(function(currentImageResource){
-    appendImage(card1,currentImageResource);
-});
+let $card1 = $('#card1');
+let $card2 = $('#card2');
+appendImages($card1,imageResources);
+appendImages($card2,imageResources);
 ```
-こんな感じです。  
 
 ### cssを編集して画面構成のイメージに近づける
 - 画像のサイズがバラバラだったので追加するimgにclassをつけてcssでサイズを指定
@@ -190,30 +192,34 @@ imageResourceArray.forEach(function(currentImageResource){
 }
 ```
 ```
-function appendImage($targetCard,imageResource){
-    let $appendImage = $('<img>',imageResource);
-    $appendImage.addClass('character-image');
-    $targetCard.append($appendImage);
+function appendImages($targetCard,imageResourceArray){
+    imageResourceArray.forEach(element => {
+        $appendImage = $('<img>',element);
+        $appendImage.addClass('character-image');
+        $targetCard.append($appendImage);        
+    });
 }
 ```
 - カードの背景を白にする
 - flexで並べてみる
 - カードの上部に余白を付ける
+- カードの最大幅を指定する
 ```
 .game-card{
     background-color : white;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-top: 16px;
+    max-width: 360px;
 }
 ```
-大きい画面にも対応させたい場合はmax-widthを指定したりよろしくやってください。  
-Live Serverはcssの試行錯誤もサクっと反映されて便利ですね。
+いい感じの表示になるようにカスタマイズしてください。  
 
 ### ランダムな画像をappendする処理に改造する
 最初に書きましたがこのゲームでは毎回画像の並び順や重複する画像をランダムにしてあげる必要があります。  
-0から配列の長さ-1までの整数乱数を発生させられれば配列のランダムな要素にアクセスできます。  
-つまりランダムな画像をappendできます。  
+配列にはindexがあるので0から配列の長さ-1までの整数乱数を発生させられれば配列のランダムな要素にアクセスできます。  
+それを応用すればランダムな画像をappendできます。  
 #### JavaScriptで乱数を発生させる方法
 JavaScriptには0から1の間の乱数を発生させるメソッド `Math.random()` があります。  
 `Math.random()` で発生させた乱数に配列の長さを掛けて `Math.floor()` で切り捨てると0から配列の長さ-1の範囲の整数乱数を発生させることができます。  
@@ -221,46 +227,196 @@ JavaScriptには0から1の間の乱数を発生させるメソッド `Math.rand
 console.log(Math.floor(Math.random() * imageResourceArray.length));
 ```
 コンソールに出力して確認してみましょう。  
-これを利用してimageResourceArrayからランダムなimageResourceを取り出すメソッド書いてみましょう。  
+これを利用してランダムな画像を8個ずつ取り出すメソッドを書いてみましょう。  
+
 ```
-function getRandomImageObject(targetImageResourceArray){
-    let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
-    return targetImageResourceArray[randomIndex];
+const numberOfImagesInCard = 8;  
+  
+function pickUpRandomImages(targetImageResourceArray){
+    let returnArray = [];
+    for(let i=0 ; i<numberOfImagesInCard; i++){
+        let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
+        returnArray.push(targetImageResourceArray[randomIndex]);
+    }
+    return returnArray;
 }
 ```
-それを使ってそれぞれのカードに8個ずつ画像をappend  
+それを使ってそれぞれのカードに画像をappend  
 ```
-let card1 = $('#card1');
-let card2 = $('#card2');
-const numberOfImageInCard = 8;
-for(let i=0;i < numberOfImageInCard;i++){
-    appendImage(card1,getRandomImageObject(imageResourceArray));   
-    appendImage(card2,getRandomImageObject(imageResourceArray));   
-}
+let $card1 = $('#card1');
+let $card2 = $('#card2');
+const numberOfImagesInCard = 8;
+appendImages($card1,pickUpRandomImages(imageResources));
+appendImages($card2,pickUpRandomImages(imageResources));
 ```
 だいぶやりたことに近づいてきました。   
 
 ### 重複しないランダムな画像をカードに7個ずつ追加し、最後に正解の画像をランダムな位置に挿入する
 重複しないようにするためには、追加した画像を配列から削除してしまいましょう。  
+pickUprandomImagesをpickUpAndRemoveRandomImagesに改造しましょう。  
 ```
-function removeImageObject(targetImageResourceArray,targetImageObject){
-    return targetImageResourceArray.filter(function(currentImageObject){
-        return currentImageObject.src !== targetImageObject.src;
-    });
+function pickUpAndRemoveRandomImages(targetImageResourceArray){
+    let returnArray = [];
+    for(let i=0 ; i<numberOfImagesInCard; i++){
+        let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
+        returnArray.push(targetImageResourceArray[randomIndex]);
+        targetImageResourceArray.splice(randomIndex,1);
+    }
+    return returnArray;
 }
 ```
-filterはcallback関数がtrueを返した要素のみを残した配列を返してくれます。  
-この関数を使って以下のようにして使ったオブジェクトを配列から消しましょう。
-
+配列から要素を削除するにはsplieを使います。  
+`splice(削除を開始する要素のinex,削除する数)` なので `splice(randomIndex,1)` でrandomIndexの要素を削除できます。  
+  
+1つ正解の重複する画像を追加する必要があるのでpickUpAndRemoveRandomImagesで取り出す数を7つに減らします。  
 ```
-for(let i=0;i < numberOfImageInCard;i++){
-    let randomImageObject = getRandomImageObject(imageResourceArray);
-    appendImage(card1,randomImageObject);   
-    imageResourceArray = removeImageObject(imageResourceArray,randomImageObject);
-}
+    for(let i=0 ; i<numberOfImagesInCard -1 ; i++){
 ```
+pickUpAndRemoveRandomImagesで取り出した値を一旦配列に入れて、そこに正解の画像を足すように改造します。  
+```
+let card1Images = pickUpAndRemoveRandomImages(imageResources);
+let card2Images = pickUpAndRemoveRandomImages(imageResources);
 
+let answerIndex = Math.floor(Math.random() * imageResources.length);
+let answerImage = imageResources[answerIndex];
+card1Images.push(answerImage);
+card2Images.push(answerImage);
+```
+おっと、これでは必ず最後に正解が入ってしまいますね。  
+card1,card2それぞれランダムな位置に挿入するように改造します。  
+```
+let card1Images = pickUpAndRemoveRandomImages(imageResources);
+let card2Images = pickUpAndRemoveRandomImages(imageResources);
+
+let answerIndex = Math.floor(Math.random() * imageResources.length);
+let answerImage = imageResources[answerIndex];
+
+let card1AnswerIndex = Math.floor(Math.random() * card1Images.length);
+card1Images.splice(card1AnswerIndex,0,answerImage);
+
+let card2AnswerIndex = Math.floor(Math.random() * card2Images.length);
+card2Images.splice(card2AnswerIndex,0,answerImage);
+```
+実はspliceは第3引数にオブジェクトを渡すことでそのオブジェクトを配列に挿入することができます。  
+また削除する数を0にすると削除せず挿入のみを行えます。  
+`splice(操作を開始する要素のindex,削除する要素の数,挿入するオブジェクト)`   
+これでほぼ実装できました。  
 
 ### 正解の判定を実装する
+正解の判定は正解の画像をタップした時だけイベントを発生させることで実現できます。  
+まず正解の要素に正解であることが分かるようにclassを追加しましょう。  
+```
+let answerIndex = Math.floor(Math.random() * imageResources.length);
+let answerImage = imageResources[answerIndex];
+answerImage['class'] = 'answer';
+```
+こう書くことでanswerImageのclassフィールドにanswerがセットされ、それをもとに生成したDOMのclassにanswerが付きます。  
+このclassにanswerがついている要素にイベントを書いてみましょう。  
 
+```
+$('#game-field .answer').click(function(){
+    alert('正解！');
+});
+```
+`#game-field .answer` これでid=game-fieldの子要素の中でclassにanswerがついている要素という意味になります。  
+その要素にclickイベントをセットしてalertで正解と表示する実装になります。  
 
+### 問題を繰り返し表示するようにする
+正解したら繰り返し問題を表示するようにしてみましょう。  
+繰り返したい部分をstartGameメソッドにします。   
+正解を表示した後にcard1,card2の中身を空にしてstarGameメソッドを呼ぶようにします。  
+メソッドにするとjsファイルを読み込んだ時に実行されなくなるので、startGameメソッドを実行する文も足します。  
+（imageResourcesはメソッド内に持つと邪魔なのでgetするメソッドにして切り出しています）  
+
+```
+function appendImages($targetCard,imageResourceArray){
+    imageResourceArray.forEach(element => {
+        $appendImage = $('<img>',element);
+        $appendImage.addClass('character-image');
+        $targetCard.append($appendImage);        
+    });
+}
+
+const $card1 = $('#card1');
+const $card2 = $('#card2');
+const numberOfImagesInCard = 8;
+
+function getImageResources(){
+    return [
+        {'src':'img/chocojiro.jpg'},
+        {'src':'img/ahoudori.jpg'},
+        {'src':'img/alexander.jpg'},
+        {'src':'img/baniokun.jpg'},
+        {'src':'img/cock-kawasaki.jpg'},
+        {'src':'img/ebi-fly.jpeg'},
+        {'src':'img/gongchang.jpg'},
+        {'src':'img/kenny.jpg'},
+        {'src':'img/kodak.jpg'},
+        {'src':'img/korirakuma.jpg'},
+        {'src':'img/molang.jpg'},
+        {'src':'img/ninja-slayer.jpg'},
+        {'src':'img/panpanya.jpg'},
+        {'src':'img/shown.jpg'},
+        {'src':'img/snoopy.jpg'},
+        {'src':'img/sushikun.jpg'},
+        {'src':'img/unigurikun.jpg'},
+    ];
+}
+
+function startGame(){
+    let imageResources = getImageResources();
+
+    let card1Images = pickUpAndRemoveRandomImages(imageResources);
+    let card2Images = pickUpAndRemoveRandomImages(imageResources);
+    
+    let answerIndex = Math.floor(Math.random() * imageResources.length);
+    let answerImage = imageResources[answerIndex];
+    answerImage['class'] = 'answer';
+    
+    let card1AnswerIndex = Math.floor(Math.random() * card1Images.length);
+    card1Images.splice(card1AnswerIndex,0,answerImage);
+    
+    let card2AnswerIndex = Math.floor(Math.random() * card2Images.length);
+    card2Images.splice(card2AnswerIndex,0,answerImage);
+    
+    appendImages($card1,card1Images);
+    appendImages($card2,card2Images);
+    
+    $('#game-field .answer').click(function(){
+        alert('正解！');
+        $card1.empty();
+        $card2.empty();
+        startGame();
+    });
+}
+
+startGame();
+
+function pickUpAndRemoveRandomImages(targetImageResourceArray){
+    let returnArray = [];
+    for(let i=0 ; i<numberOfImagesInCard -1 ; i++){
+        let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
+        returnArray.push(targetImageResourceArray[randomIndex]);
+        targetImageResourceArray.splice(randomIndex,1);
+    }
+    return returnArray;
+}
+```
+これで完成です◎  
+
+### 早く終わった人へ  
+- こんな機能を追加してみると良いかも？  
+正解のエフェクトを追加する（ピンポンって音を鳴らすとか、〇が付くとか）  
+正解した時に正解までにかかった時間を表示する  
+正解までのベストタイムをローカルストレージに記録して、更新したら知らせてくれる  
+- 画面共有して推しキャラについて語る
+- 今回の実装内容に関連する読み物
+```
+JavaScriptで書く「var,let,const」の違いと使い分け方法  
+https://techacademy.jp/magazine/14872   
+varで書いてたおじさんだったので勉強になりました。
+
+リストから複数の要素をランダムに重複なく効率よく取り出す  
+https://qiita.com/sdkei/items/43d2902908efcfca7f25   
+配列が大きくなるとこういうロジックにしてやる必要があるんだろうけど、業務ロジックからは意識せず使えるようにしたいですね。
+```
