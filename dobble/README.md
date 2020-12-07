@@ -176,7 +176,9 @@ let imageResourceArray = [
     .....
 ];
 let $card1 = $('#card1');
+let $card2 = $('#card2');
 appendImages($card1,imageResources);
+appendImages($card2,imageResources);
 ```
 
 ### cssを編集して画面構成のイメージに近づける
@@ -213,7 +215,6 @@ function appendImages($targetCard,imageResourceArray){
 }
 ```
 いい感じの表示になるようにカスタマイズしてください。  
-Live Serverはcssの試行錯誤もサクっと反映されて便利ですね。
 
 ### ランダムな画像をappendする処理に改造する
 最初に書きましたがこのゲームでは毎回画像の並び順や重複する画像をランダムにしてあげる必要があります。  
@@ -228,42 +229,28 @@ console.log(Math.floor(Math.random() * imageResourceArray.length));
 コンソールに出力して確認してみましょう。  
 これを利用してimageResourceArrayからランダムなimageResourceを取り出すメソッド書いてみましょう。  
 ```
-function getRandomImageObject(targetImageResourceArray){
-    let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
-    return targetImageResourceArray[randomIndex];
+function pickUpRandomImages(targetImageResourceArray){
+    let returnArray = [];
+    for(let i=0 ; i<numberOfImagesInCard; i++){
+        let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
+        returnArray.push(targetImageResourceArray[randomIndex]);
+    }
+    return returnArray;
 }
 ```
 それを使ってそれぞれのカードに8個ずつ画像をappend  
 ```
-let card1 = $('#card1');
-let card2 = $('#card2');
-const numberOfImageInCard = 8;
-for(let i=0;i < numberOfImageInCard;i++){
-    appendImage(card1,getRandomImageObject(imageResourceArray));   
-    appendImage(card2,getRandomImageObject(imageResourceArray));   
-}
+let $card1 = $('#card1');
+let $card2 = $('#card2');
+const numberOfImagesInCard = 8;
+appendImages($card1,pickUpRandomImages(imageResources));
+appendImages($card2,pickUpRandomImages(imageResources));
 ```
 だいぶやりたことに近づいてきました。   
 
 ### 重複しないランダムな画像をカードに7個ずつ追加し、最後に正解の画像をランダムな位置に挿入する
 重複しないようにするためには、追加した画像を配列から削除してしまいましょう。  
-```
-function removeImageObject(targetImageResourceArray,targetImageObject){
-    return targetImageResourceArray.filter(function(currentImageObject){
-        return currentImageObject.src !== targetImageObject.src;
-    });
-}
-```
-filterはcallback関数がtrueを返した要素のみを残した配列を返してくれます。  
-この関数を使って以下のようにして使ったオブジェクトを配列から消しましょう。
 
-```
-for(let i=0;i < numberOfImageInCard;i++){
-    let randomImageObject = getRandomImageObject(imageResourceArray);
-    appendImage(card1,randomImageObject);   
-    imageResourceArray = removeImageObject(imageResourceArray,randomImageObject);
-}
-```
 
 
 ### 正解の判定を実装する
