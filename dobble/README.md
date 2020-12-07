@@ -411,5 +411,6 @@ function pickUpAndRemoveRandomImages(targetImageResourceArray){
 正解までのベストタイムをローカルストレージに記録して、更新したら知らせてくれる  
 - 画面共有して推しキャラについて語る
 - 今回の実装内容に関連する読み物
-hoge
-fuga
+> JavaScriptで書く「var,let,const」の違いと使い分け方法
+> https://techacademy.jp/magazine/14872  
+
