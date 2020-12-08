@@ -123,6 +123,12 @@ https://code.jquery.com/jquery-3.5.1.js
 ```
 - index.htmlのapp.jsの読み込みのひとつ前の行にscript:srcして、srcにlib/jquery-3.5.1.jsと記載します  
 
+```
+    <script src="lib/jquery-3.5.1.js"></script>
+    <script src="app.js"></script>
+```
+この時必ず * app.jsよりも手前で読み込んでください *   
+
 ### imgタグを動的にappendする処理を書いてみる
 このゲームでは毎回画像の並び順や重複する画像がランダムになっていないと面白くないです。  
 そのため画像要素はjsで動的に作って追加する実装にします。  
