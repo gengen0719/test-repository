@@ -127,7 +127,7 @@ https://code.jquery.com/jquery-3.5.1.js
     <script src="lib/jquery-3.5.1.js"></script>
     <script src="app.js"></script>
 ```
-この時必ず * app.jsよりも手前で読み込んでください *   
+この時必ず *app.jsよりも手前で読み込んでください* 
 
 ### imgタグを動的にappendする処理を書いてみる
 このゲームでは毎回画像の並び順や重複する画像がランダムになっていないと面白くないです。  
@@ -288,7 +288,7 @@ let answerImage = imageResources[answerIndex];
 card1Images.push(answerImage);
 card2Images.push(answerImage);
 ```
-おっと、これでは必ず最後に正解が入ってしまいますね。  
+これでは必ず最後に正解が入ってしまいますね。  
 card1,card2それぞれランダムな位置に挿入するように改造します。  
 ```
 let card1Images = pickUpAndRemoveRandomImages(imageResources);
