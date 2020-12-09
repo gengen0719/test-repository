@@ -48,22 +48,22 @@ Live Serverで立てたサーバーにWifi経由でiPhoneやiPadでアクセス�
 ```
 VSCODEを立ち上げて、適当なフォルダ（例ではDobble Gameというフォルダ）を開き以下のファイルを作ります  
   
-index.html  
-- htmlと打って、html:5のテンプレートを選択
-- body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcを選んで、srcにapp.jsを指定
-- head tag内でapp.cssを読み込むためにlinkとうち、link:cssを選んで、srcにapp.cssを指定  
-  
 app.js   
 - app.jsには読み込み確認のために、console.log('hello');を記載  
   
 app.css   
-- app.cssには読み込み確認のために、以下を記載  
-  
+- app.cssには読み込み確認のために、以下を記載   
 ```
 body{
     background-color: grey;
 }
 ```
+  
+index.html  
+- htmlと打って、html:5のテンプレートを選択
+- body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcを選んで、srcにapp.jsを指定
+- head tag内でapp.cssを読み込むためにlinkとうち、link:cssを選んで、srcにapp.cssを指定  
+  
 index.htmlを選択して、右クリックOpen With Live Server  
 灰色の画面で開く　-> css読み込みOK  
 F12 consoleでhelloと出ていればjs読み込みOK  
