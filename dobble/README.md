@@ -29,8 +29,8 @@ https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
 子供の好きなキャラクターで実装すると喜んで遊んでくれるかも。  
 特に推しキャラがいない、探すのが面倒だという方には図形の画像を用意しています。  
 (これはこれで脳トレとか知育っぽい感じになって良いかもしれない)  
-> 以下のリンク先のdownloadというボタンを押してzipファイルをダウンロードし解凍して配置してください。
-> https://github.com/gengen0719/test-repository/blob/master/dobble/dojo-prepare/DobbleImages.zip
+> 以下のリンク先のdownloadというボタンを押してzipファイルをダウンロードし解凍して配置してください。  
+> https://github.com/gengen0719/test-repository/blob/master/dobble/dojo-prepare/DobbleImages.zip  
 外部公開する場合は著作権上問題のない画像を利用してください。  
 Live Serverで立てたサーバーにWifi経由でiPhoneやiPadでアクセスすれば外部公開しなくても遊べる環境は作れます。   
 
