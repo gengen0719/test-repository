@@ -338,7 +338,7 @@ $('#game-field .answer').click(function(){
 <details>
   <summary>完成コード</summary>
   <pre>
-```
+  <code>
 function appendImages($targetCard,imageResourceArray){
     imageResourceArray.forEach(element => {
         $appendImage = $('<img>',element);
@@ -411,8 +411,8 @@ function pickUpAndRemoveRandomImages(targetImageResourceArray){
     }
     return returnArray;
 }
-```
-</pre>
+  </code>
+  </pre>
 </details>
 
 これで完成です◎  
