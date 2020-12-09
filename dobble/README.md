@@ -46,6 +46,8 @@ Live Serverで立てたサーバーにWifi経由でiPhoneやiPadでアクセス�
 --app.js
 --app.css
 ```
+VSCODEを立ち上げて、適当なフォルダ（例ではDobble Gameというフォルダ）を開き以下のファイルを作ります  
+  
 index.html  
 - htmlと打って、html:5のテンプレートを選択
 - body tagの最終行でapp.jsを読み込むためにscriptとうち、script:srcを選んで、srcにapp.jsを指定
