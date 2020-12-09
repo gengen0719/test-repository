@@ -338,7 +338,11 @@ $('#game-field .answer').click(function(){
 <details>
   <summary>完成コード</summary>
   <pre>
-  <code>
+  <code> 
+const $card1 = $('#card1');
+const $card2 = $('#card2');
+const numberOfImagesInCard = 8;
+
 function appendImages($targetCard,imageResourceArray){
     imageResourceArray.forEach(element => {
         $appendImage = $('<img>',element);
@@ -347,9 +351,15 @@ function appendImages($targetCard,imageResourceArray){
     });
 }
 
-const $card1 = $('#card1');
-const $card2 = $('#card2');
-const numberOfImagesInCard = 8;
+function pickUpAndRemoveRandomImages(targetImageResourceArray){
+    let returnArray = [];
+    for(let i=0 ; i<numberOfImagesInCard -1 ; i++){
+        let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
+        returnArray.push(targetImageResourceArray[randomIndex]);
+        targetImageResourceArray.splice(randomIndex,1);
+    }
+    return returnArray;
+}
 
 function getImageResources(){
     return [
@@ -402,15 +412,6 @@ function startGame(){
 
 startGame();
 
-function pickUpAndRemoveRandomImages(targetImageResourceArray){
-    let returnArray = [];
-    for(let i=0 ; i<numberOfImagesInCard -1 ; i++){
-        let randomIndex = Math.floor(Math.random() * targetImageResourceArray.length);
-        returnArray.push(targetImageResourceArray[randomIndex]);
-        targetImageResourceArray.splice(randomIndex,1);
-    }
-    return returnArray;
-}
   </code>
   </pre>
 </details>
