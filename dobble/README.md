@@ -162,7 +162,7 @@ $card1.append(appendImage);
 jQueryでは$()にタグを渡してあげるとそのタグの要素を生成します。  
 さらに第2引数にオブジェクトを指定すると、そのオブジェクトのプロパティは、HTMLの属性として設定されます。  
 
-関数化してみましょう。  
+同じような処理をcard2にも行うことになるので、関数化しておきましょう。  
 ```
 function appendImage($targetCard,imageResource){
     $targetCard.append($('<img>',imageResource));
