@@ -412,7 +412,7 @@ function pickUpAndRemoveRandomImages(targetImageResourceArray){
     return returnArray;
 }
 ```
-  </pre>
+</pre>
 </details>
 
 これで完成です◎  
