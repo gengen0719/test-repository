@@ -207,20 +207,26 @@ function appendImages($targetCard,imageResourceArray){
 }
 ```
 - カードの背景を白にする
-- flexで並べてみる
+- display : gridで並べてみる
 - カードの上部に余白を付ける
 - カードの最大幅を指定する
 ```
 .game-card{
     background-color : white;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns : repeat(4,25%);
+    grid-template-rows : 50% 50%;
     margin-top: 16px;
     max-width: 360px;
 }
+.character-image{
+    width : 80px;
+    height : 80px;
+    margin: 4px;
+    grid-area: auto;
+}
 ```
-いい感じの表示になるようにカスタマイズしてください。  
+うまくやればデバイスのサイズに合わせて画像の大きさを変えられそうな気もします。
 
 ### ランダムな画像をappendする処理に改造する
 最初に書きましたがこのゲームでは毎回画像の並び順や重複する画像をランダムにしてあげる必要があります。  
