@@ -214,19 +214,13 @@ function appendImages($targetCard,imageResourceArray){
 .game-card{
     background-color : white;
     display: grid;
-    grid-template-columns : repeat(4,25%);
-    grid-template-rows : 50% 50%;
+    grid-template-columns : repeat(4,auto);
+    grid-template-rows : repeat(2,auto);
     margin-top: 16px;
     max-width: 360px;
 }
-.character-image{
-    width : 80px;
-    height : 80px;
-    margin: 4px;
-    grid-area: auto;
-}
 ```
-うまくやれば画面サイズに合わせて画像の大きさを変えられそうな気もします。
+レスポンシブデザインにすることもできると思うので余力がある方はやってみてください。  
 
 ### ランダムな画像をappendする処理に改造する
 最初に書きましたがこのゲームでは毎回画像の並び順や重複する画像をランダムにしてあげる必要があります。  
