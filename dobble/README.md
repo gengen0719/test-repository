@@ -335,6 +335,9 @@ $('#game-field .answer').click(function(){
 メソッドにするとjsファイルを読み込んだ時に実行されなくなるので、startGameメソッドを実行する文も足します。  
 （imageResourcesはメソッド内に持つと邪魔なのでgetするメソッドにして切り出しています）  
 
+<details>
+  <summary>完成コード</summary>
+  <pre>
 ```
 function appendImages($targetCard,imageResourceArray){
     imageResourceArray.forEach(element => {
@@ -409,6 +412,9 @@ function pickUpAndRemoveRandomImages(targetImageResourceArray){
     return returnArray;
 }
 ```
+  </pre>
+</details>
+
 これで完成です◎  
 
 ### 早く終わった人へ  
