@@ -1,4 +1,11 @@
 # Dobble Gameを作ってみよう
+## Dobble Gameとは？
+細かいルールはいろいろあるようですが、  
+「8つのイラストが描かれたカード2枚を見比べて同じイラストを見つける」
+というのが基本ルールです。    
+https://boku-boardgame.net/dobble  
+どのカードを見比べても1つだけ同じイラストが見つかるように作られているようです。
+
 実装例  
 https://gengen0719.github.io/test-repository/dobble/dojo-prepare/index
 
@@ -6,13 +13,6 @@ https://gengen0719.github.io/test-repository/dobble/dojo-prepare/index
 - jQueryでのDOMの扱い
 - JavaScriptでの配列の扱い
 - JavaScriptでの乱数の扱い、画像をランダムに表示する実装
-
-## Dobble Gameとは？
-細かいルールはいろいろあるようですが、  
-「8つのイラストが描かれたカード2枚を見比べて同じイラストを見つける」
-というのが基本ルールです。    
-https://boku-boardgame.net/dobble  
-どのカードを見比べても1つだけ同じイラストが見つかるように作られているようです。
 
 ## 事前準備
 ### 開発ツール
