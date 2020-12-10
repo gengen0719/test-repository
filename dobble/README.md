@@ -180,7 +180,7 @@ function appendImages($targetCard,imageResourceArray){
     });
 }
 
-let imageResourceArray = [
+let imageResources = [
     {'src':'img/chocojiro.jpg'},
     {'src':'img/ahoudori.jpg'},
     {'src':'img/alexander.jpg'},
